@@ -13,30 +13,33 @@ const masonry = new Macy({
 
 })
 
+let loader = document.querySelector(".loading-screen")
+let ready = document.querySelector(".loading-screen p")
+let masonryContainer = document.querySelector(".masonry")
+
+ready.addEventListener("click", () => {
+    loader.classList.toggle("active");
+    masonryContainer.style.display = "block"
+    masonry.recalculate();
+
+
+})
+
+
+
+
+
 
 let photos = [...document.querySelectorAll(".masonry img")]
-
-
-
 let audio = document.querySelector("#audioID")
-
-//Example of an HTML Audio/Video Method
-
 const audioAdd = () => {
     const audioChanger = () => {
         let audioNumber = Math.floor(Math.random() * 48);
         let audioFinalSource = `audio/glitch${audioNumber}.wav`
         return audioFinalSource;
     }
-
-
     document.getElementById("audioID").setAttribute('src', `${audioChanger()}`);
-    var playPromise = audio.play();
-    if (playPromise !== undefined) {
-        playPromise.then(_ => {})
-            .catch(error => {});
-    }
-
+    audio.play();
 }
 
 photos.forEach(img => {

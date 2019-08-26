@@ -13,12 +13,21 @@ header
             text-align: center
             font-size: 2.5rem
             text-decoration: none
+
+    
+    
+
 .masonry 
     width: 80%
     margin: 5% auto
+    position: relative 
+    z-index: -5
+    display: none
     img 
+        position: relative
         transform: translate(0, 0)
         cursor: pointer
+        z-index: -5
     img:hover 
         animation: glitch-effect .2s steps(1) both
         
@@ -30,6 +39,7 @@ header
         10%
             transform: translate(0, -5px)
             filter: saturate(1)
+            background-color: white
         20%
             transform: translate(-5px, -5px)
             filter: invert(100%)
@@ -55,8 +65,132 @@ header
             transform: translate(0, -5px)
             filter: saturate(9)
         100% 
-            transform: translate(0, 0)
-            filter: none
+            display: none
+.loading-screen.active
+  animation: glitch-effect-loader 1s 1 linear forwards
+  
+@keyframes glitch-effect-loader
+  0% 
+      transform: translate(-5px, 0)
+      filter: hue-rotate(90deg)
+  10%
+      transform: translate(0, -5px)
+      filter: saturate(1)
+  20%
+      transform: translate(-5px, -5px)
+      filter: invert(100%)
+  30% 
+      transform: translate(-5px, 0)
+      filter: saturate(3)
+  35%
+      transform: translate(0, -5px)
+      filter: saturate(4)
+  56%
+      transform: translate(-5px, -5px)
+      filter: invert(100%)
+  60% 
+      transform: translate(-5px, 0)
+      filter: hue-rotate(90deg)
+  61% 
+      transform: translate(0, -5px)
+      filter: saturate(7)
+  80% 
+      transform: translate(-5px, 0)
+      filter: invert(100%)
+  90%
+      transform: translate(0, -5px)
+      filter: saturate(9)
+  100% 
+      display: none
+      z-index: -22
+      
+
+
+.loading-screen
+
+  position: absolute
+  width: 15%
+  height: 2px
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  
+  background-color: black
+  z-index: 5
+
+    
+
+
+  p 
+      font-family: 'Montserrat', sans-serif
+      text-transform: uppercase
+      font-size: 2rem
+      color: white
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      animation: ready 1.5s 1 ease both
+      animation-delay: 2s 
+      opacity: 0
+      cursor: pointer
+  @keyframes ready 
+       100% 
+           opacity: 1
+
+
+  .loader
+      display: flex
+      height: 100%
+      div
+
+          flex: 1
+          background-color: pink
+          animation: go .8s 2 ease
+          box-shadow: 0 0 20px whitesmoke
+          
+        
+      div:nth-of-type(1)
+          animation-delay: 0.1s
+      div:nth-of-type(2)
+          animation-delay: 0.12s
+      div:nth-of-type(3)
+          animation-delay: 0.14s
+      div:nth-of-type(4)
+          animation-delay: 0.16s
+      div:nth-of-type(5)
+          animation-delay: 0.18s
+      div:nth-of-type(6)
+          animation-delay: 0.20s
+      div:nth-of-type(7)
+          animation-delay: 0.22s
+      div:nth-of-type(8)
+          animation-delay: 0.24s
+      div:nth-of-type(9)
+          animation-delay: 0.26s
+   
+      @keyframes go
+        50% 
+            transform: matrix3d(0.359127, -0.469472, 0.806613, 0, 0.190951, 0.882948, 0.428884, 0, -0.913545, 0, 0.406737, 0, 0, 0, 0, 1)
+        
+        100% 
+            transform: translateX(-50px) 
+            
+
+          
+        
+       
+
+
+
+
+
+
+
+    
+
+    
+      
            
             
   
