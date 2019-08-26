@@ -21,9 +21,8 @@ ready.addEventListener("click", () => {
     loader.classList.toggle("active");
     masonryContainer.style.display = "block"
     masonry.recalculate();
-
-
 })
+
 
 
 
@@ -46,3 +45,5 @@ photos.forEach(img => {
     img.addEventListener("mouseover", audioAdd)
 
 });
+
+
