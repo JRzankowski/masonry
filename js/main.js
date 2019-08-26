@@ -24,14 +24,19 @@ let audio = document.querySelector("#audioID")
 
 const audioAdd = () => {
     const audioChanger = () => {
-        let audioNumber = Math.floor(Math.random() * 52);
+        let audioNumber = Math.floor(Math.random() * 48);
         let audioFinalSource = `audio/glitch${audioNumber}.wav`
         return audioFinalSource;
     }
 
 
     document.getElementById("audioID").setAttribute('src', `${audioChanger()}`);
-    audio.play();
+    var playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {})
+            .catch(error => {});
+    }
+
 }
 
 photos.forEach(img => {
