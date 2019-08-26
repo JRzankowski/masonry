@@ -29,7 +29,7 @@ header
         cursor: pointer
         z-index: -5
     img:hover 
-        animation: glitch-effect .2s steps(1) both
+        animation: glitch-effect .4s steps(1) both
         
         
     @keyframes glitch-effect
@@ -39,19 +39,20 @@ header
         10%
             transform: translate(0, -5px)
             filter: saturate(1)
-            background-color: white
+         
         20%
             transform: translate(-5px, -5px)
-            filter: invert(100%)
+            filter: invert(.5)
         30% 
             transform: translate(-5px, 0)
-            filter: saturate(3)
+            filter: saturate(100%)
+            hue-rotate(90deg)
         35%
             transform: translate(0, -5px)
-            filter: saturate(4)
+            filter: saturate(20%)
         56%
             transform: translate(-5px, -5px)
-            filter: invert(100%)
+            filter: invert(1)
         60% 
             transform: translate(-5px, 0)
             filter: hue-rotate(90deg)
